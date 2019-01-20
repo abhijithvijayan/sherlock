@@ -9,29 +9,35 @@ export default class Sites {
         this.url = url;
     }
 
-    async getUserName() {
+    async getUserName(value) {
+        let errorMsg = value.errorMsg || 'Not Found';
+
         let cors = 'https://cors-anywhere.herokuapp.com/';
+        let checkURL = this.url.replace('{}', this.username);
 
         try {
             const response = await Axios({
-                url: `${cors}${this.url}${this.username}`,
+                url: `${cors}${checkURL}`,
                 timeout: 10000
             });
-            // needed
             // console.log(response.data);
-
+            // Status: 200 But not exist
+            // console.log(errorMsg);
+            if (response.data.includes(`${errorMsg}`)) {
+                // console.log("String found!!");
+                return 404;
+            } 
+            // else if (window.location.href !== value.errorUrl) {
+            //     console.log(response.request);
+            //     return 404;
+            // }
             // console.log(response.status);
-            // console.log(response.statusText);
-            // console.log(response.headers);
-            // console.log(response.config);
             return response.status;
 
 
         } catch (error) {
-
             if (error.response) {
-                // The request was made and the server responded with a status code
-                // that falls out of the range of 2xx
+                // The request was made and the server responded with a status code that falls out of the range of 2xx
                 // console.log(error.response.data);
                 // console.log(error.response.headers);
 

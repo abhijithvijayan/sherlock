@@ -27,10 +27,10 @@ let handleController = (function () {
 
     return {
 
-        searchUserName: (username, url, sitename) => {
-
+        searchUserName: (username, key, value) => {
+            let url = value.url, sitename = key;
             const user = new Sites(username, url);
-            user.getUserName()
+            user.getUserName(value)
                 .then(result => {
                     if (result === 404) {
                         console.log(`${sitename}: Username Available!`);
@@ -54,17 +54,18 @@ let appController = (function (UICtrl, handleCtrl) {
 
 
     let startSearch = (jsonObj) => {
-        let username, url, sitename;
-        
+        let username, url, sitename, errorMsg;
+
         username = document.getElementById(DOM.username).value;
 
         // traverse json
         Object.entries(jsonObj).forEach(([key, value]) => {
             // console.log(key);
             // console.log(value);
-            sitename = key;
-            url = value.url;    
-            handleCtrl.searchUserName(username, url, sitename);
+
+            if (username.length >= value.minChar) {
+                handleCtrl.searchUserName(username, key, value);
+            }
         });
 
     };

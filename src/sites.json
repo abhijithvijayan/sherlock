@@ -1,32 +1,60 @@
 {
   "Instagram": {
-    "url": "https://www.instagram.com/",
+    "url": "https://www.instagram.com/{}",
     "urlMain": "https://www.instagram.com/",
     "errorType": "message",
-    "errorMsg": "The link you followed may be broken"
+    "errorMsg": "The link you followed may be broken",
+    "minChar": 5
   },
   "Twitter": {
-    "url": "https://www.twitter.com/",
+    "url": "https://www.twitter.com/{}",
     "urlMain": "https://www.twitter.com/",
     "errorType": "message",
-    "errorMsg": "page doesn’t exist"
+    "errorMsg": "page doesn't exist",
+    "minChar": 1
   },
   "Facebook": {
-    "url": "https://www.facebook.com/",
+    "url": "https://www.facebook.com/{}",
     "urlMain": "https://www.facebook.com/",
     "errorType": "status_code",
-    "regexCheck": "^[a-zA-Z0-9]{4,49}(?<!.com|.org|.net)$"
+    "minChar": 5
   },
-  "GitHub": {
-    "url": "https://www.github.com/",
-    "urlMain": "https://www.github.com/",
+  "YouTube": {
+    "url": "https://www.youtube.com/{}",
+    "urlMain": "https://www.youtube.com/",
+    "errorType": "message",
+    "minChar": 2
+  },
+  "Blogger": {
+    "url": "https://{}.blogspot.com",
+    "urlMain": "https://www.blogger.com/",
     "errorType": "status_code",
-    "regexCheck": "^[a-zA-Z0-9](?:[a-zA-Z0-9]|-(?=[a-zA-Z0-9])){0,38}$"
+    "minChar": 1
+  },
+  "Google Plus": {
+    "url": "https://plus.google.com/+{}",
+    "urlMain": "https://plus.google.com/",
+    "errorType": "status_code",
+    "minChar": 4
   },
   "Reddit": {
-    "url": "https://www.reddit.com/user/",
+    "url": "https://www.reddit.com/user/{}",
     "urlMain": "https://www.reddit.com/",
     "errorType": "message",
-    "errorMsg":"page not found"
+    "errorMsg":"page not found",
+    "minChar": 3
+  },
+  "GitHub": {
+    "url": "https://www.github.com/{}",
+    "urlMain": "https://www.github.com/",
+    "errorType": "status_code",
+    "minChar": 1
+  },
+  "Steam": {
+    "url": "https://steamcommunity.com/id/{}",
+    "urlMain": "https://steamcommunity.com/",
+    "errorType": "message",
+    "errorMsg": "The specified profile could not be found",
+    "minChar": 2
   }
 }
