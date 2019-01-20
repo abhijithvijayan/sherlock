@@ -39,5 +39,15 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.14.6"
   },
-  "author": "abhijithvijayan"
+  "author": "abhijithvijayan",
+  "description": "Find usernames across social networks",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhijithvijayan/sherlock.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abhijithvijayan/sherlock/issues"
+  },
+  "homepage": "https://github.com/abhijithvijayan/sherlock#readme"
 }

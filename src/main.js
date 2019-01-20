@@ -24,33 +24,24 @@ let UIController = (function () {
 // Username Handler
 let handleController = (function () {
 
+
     return {
 
-        searchUserName: (username, url) => {
+        searchUserName: (username, url, sitename) => {
 
             const user = new Sites(username, url);
             user.getUserName()
                 .then(result => {
                     if (result === 404) {
-                        console.log('Username Available!');
+                        console.log(`${sitename}: Username Available!`);
                     } else if (result === 200) {
-                        console.log('Username Taken!');
+                        console.log(`${sitename}: Username Taken!`);
                     } else {
                         console.log(`Status Code: ${result}`);
                     }
                 });
 
         }
-
-
-
-
-
-        // const github = new Sites(`${username}`, 'https://api.github.com/users/');
-        // github.getUserName()
-        //     .then(result => {
-        //         console.log(`Github: Status Code: ${result}`);
-        //     });
 
     }
 
@@ -61,36 +52,36 @@ let appController = (function (UICtrl, handleCtrl) {
     let DOM;
     DOM = UICtrl.getDOMStrings();
 
-    let startSearch = (dataJSON) => {
-        let username = document.getElementById(DOM.username).value;
-        let url = dataJSON.Instagram.url;
 
-        handleCtrl.searchUserName(username, url);
-
-        url = dataJSON.GitHub.url;
-        handleCtrl.searchUserName(username, url);
+    let startSearch = (jsonObj) => {
+        let username, url, sitename;
         
-        url = dataJSON.Twitter.url;
-        handleCtrl.searchUserName(username, url);
-        
-        url = dataJSON.Facebook.url;
-        handleCtrl.searchUserName(username, url);
+        username = document.getElementById(DOM.username).value;
 
-        url = dataJSON.Reddit.url;
-        handleCtrl.searchUserName(username, url);
+        // traverse json
+        Object.entries(jsonObj).forEach(([key, value]) => {
+            // console.log(key);
+            // console.log(value);
+            sitename = key;
+            url = value.url;    
+            handleCtrl.searchUserName(username, url, sitename);
+        });
+
     };
+
 
     let extractJSON = () => {
 
         loadJSON()
-            .then(dataJSON => {
-                startSearch(dataJSON);
-                //  console.log(dataJSON);
+            .then(jsonObj => {
+                startSearch(jsonObj);
+                //  console.log(jsonObj);
             })
             .catch(err => {
                 console.log(err);
             });
     };
+
 
     let setUpEventListeners = () => {
 
@@ -107,6 +98,7 @@ let appController = (function (UICtrl, handleCtrl) {
         document.querySelector(DOM.submit_btn).addEventListener('click', extractJSON);
 
     };
+
 
     return {
 

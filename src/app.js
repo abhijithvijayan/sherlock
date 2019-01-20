@@ -1,6 +1,8 @@
 import Axios from 'axios';
 import json from './sites.json';
 
+
+// axios requests
 export default class Sites {
     constructor(username, url) {
         this.username = username;
@@ -15,7 +17,9 @@ export default class Sites {
                 url: `${cors}${this.url}${this.username}`,
                 timeout: 10000
             });
+            // needed
             // console.log(response.data);
+
             // console.log(response.status);
             // console.log(response.statusText);
             // console.log(response.headers);
@@ -25,25 +29,28 @@ export default class Sites {
 
         } catch (error) {
 
-            // if (error.response) {
-            //     // The request was made and the server responded with a status code
-            //     // that falls out of the range of 2xx
-            //     console.log(error.response.data);
-            //     console.log(error.response.status);
-            //     console.log(error.response.headers);
-            // } else if (error.request) {
-            //     // The request was made but no response was received
-            //     // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-            //     // http.ClientRequest in node.js
-            //     console.log(error.request);
-            // } else {
-            //     // Something happened in setting up the request that triggered an Error
-            //     console.log('Error', error.message);
-            // }
+            if (error.response) {
+                // The request was made and the server responded with a status code
+                // that falls out of the range of 2xx
+                // console.log(error.response.data);
+                // console.log(error.response.headers);
+
+                // needed
+                // console.log(error.response.status);
+
+                return error.response.status;
+
+                // } else if (error.request) {
+                //     // The request was made but no response was received
+                //     console.log(error.request);
+            } else {
+                // needed
+                // console.log('Error', error.message);
+
+                return 404;
+            }
 
             // console.error(error);
-            // username available
-            return 404;
         }
 
     }
@@ -51,6 +58,7 @@ export default class Sites {
 }
 
 
+// json -> object
 export async function loadJSON() {
     return await $.getJSON(json)
         .then(data => {
