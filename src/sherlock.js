@@ -19,12 +19,12 @@ export default class Sites {
         try {
             const response = await axios({
                 url: `${cors}${checkURL}`,
-                timeout: 10000
+                timeout: 20000
             });
             // console.log(response.data);
             // Status: 200 But not exist
             // console.log(errorMsg);
-            if (response.data.includes(`${errorMsg}`)) {
+            if (response.data.includes(errorMsg)) {
                 // console.log("String found!!");
 
                 return {

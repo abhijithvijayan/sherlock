@@ -49,5 +49,11 @@
   "bugs": {
     "url": "https://github.com/abhijithvijayan/sherlock/issues"
   },
-  "homepage": "https://github.com/abhijithvijayan/sherlock#readme"
+  "homepage": "https://github.com/abhijithvijayan/sherlock#readme",
+  "keywords": [
+    "username",
+    "finder",
+    "socialmedia",
+    "websites"
+  ]
 }

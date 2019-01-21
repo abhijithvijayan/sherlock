@@ -11,6 +11,8 @@ let UIController = (function () {
         submit_btn: '.username__submit--button'
     };
 
+    const colorStatus = ['bg-avail', 'bg-taken', 'bg-grey', 'bg-red'];
+
     const updateContent = (id, className, url) => {
         let el = document.getElementById(id);
         el.classList.add(className);
@@ -21,16 +23,21 @@ let UIController = (function () {
 
         updateUI: (sitename, status, url) => {
             if (status === 'avail') {
-                updateContent(sitename, 'bg-avail', url);
+                updateContent(sitename, colorStatus[0], url);
             } else if (status === 'taken') {
-                updateContent(sitename, 'bg-taken', url);
+                updateContent(sitename, colorStatus[1], url);
             } else if (status === 'invalid') {
-                updateContent(sitename, 'bg-grey', url);
+                updateContent(sitename, colorStatus[2], url);
             } else if (status === 'error') {
-                updateContent(sitename, 'bg-red', url);
+                updateContent(sitename, colorStatus[3], url);
             }
         },
 
+        resetClass: () => {
+            for (let className of colorStatus) {
+                $('a').removeClass(className);
+            }
+        },
 
         getDOMStrings: () => {
             return DOMStrings;
@@ -116,12 +123,16 @@ let appController = (function (UICtrl, handleCtrl) {
             let keyCode = e.which || e.keyCode;
             // enter key
             if (keyCode === 13) {
+                UICtrl.resetClass();
                 extractJSON();
             }
         });
 
         // search button
-        document.querySelector(DOM.submit_btn).addEventListener('click', extractJSON);
+        document.querySelector(DOM.submit_btn).addEventListener('click', () => {
+            UICtrl.resetClass();
+            extractJSON();
+        });
 
     };
 

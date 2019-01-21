@@ -137,13 +137,6 @@
     "errorType": "status_code",
     "minChar": 1
   },
-  "MixCloud": {
-    "url": "https://www.mixcloud.com/{}",
-    "urlMain": "https://www.mixcloud.com/",
-    "errorType": "message",
-    "errorMsg": "Page Not Found",
-    "minChar": 1
-  },
   "Scribd": {
     "url": "https://www.scribd.com/{}",
     "urlMain": "https://www.scribd.com/",
@@ -239,13 +232,6 @@
     "urlMain": "https://vsco.co/",
     "errorType": "status_code",
     "minChar": 3
-  },
-  "AngelList": {
-    "url": "https://angel.co/{}",
-    "urlMain": "https://angel.co/",
-    "errorType": "message",
-    "errorMsg": "We couldn't find what you were looking for.",
-    "minChar": 1
   },
   "lastfm": {
     "url": "https://last.fm/user/{}",
