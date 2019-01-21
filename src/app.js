@@ -11,8 +11,27 @@ let UIController = (function () {
         submit_btn: '.username__submit--button'
     };
 
+    const updateContent = (id, className, url) => {
+        let el = document.getElementById(id);
+        el.classList.add(className);
+        el.setAttribute('href', url);
+    };
 
     return {
+
+        updateUI: (sitename, status, url) => {
+            if (status === 'avail') {
+                updateContent(sitename, 'bg-avail', url);
+            } else if (status === 'taken') {
+                updateContent(sitename, 'bg-taken', url);
+            } else if (status === 'invalid') {
+                updateContent(sitename, 'bg-grey', url);
+            } else if (status === 'error') {
+                updateContent(sitename, 'bg-red', url);
+            }
+        },
+
+
         getDOMStrings: () => {
             return DOMStrings;
         }
@@ -22,7 +41,7 @@ let UIController = (function () {
 
 
 // Username Handler
-let handleController = (function () {
+let handleController = (function (UICtrl) {
 
     return {
 
@@ -31,12 +50,17 @@ let handleController = (function () {
             const user = new Sites(username, url);
             user.getUserName(value)
                 .then(result => {
-                    if (result === 404) {
-                        console.log(`${sitename}: Username Available!`);
-                    } else if (result === 200) {
-                        console.log(`${sitename}: Username Taken!`);
+                    if (result.statusCode === 404) {
+                        //   console.log(`${sitename}: Username Available!`);
+                        UICtrl.updateUI(sitename, 'avail', result.origUrl);
+
+                    } else if (result.statusCode === 200) {
+                        // console.log(`${sitename}: Username Taken!`);
+                        UICtrl.updateUI(sitename, 'taken', result.profileUrl);
+                    } else if (result.statusCode === 504) {
+                        UICtrl.updateUI(sitename, 'error', result.origUrl);
                     } else {
-                        console.log(`Status Code: ${result}`);
+                        console.log(`Status: ${result}`);
                     }
                 });
 
@@ -44,7 +68,7 @@ let handleController = (function () {
 
     }
 
-})();
+})(UIController);
 
 // Global APP controller
 let appController = (function (UICtrl, handleCtrl) {
@@ -53,8 +77,7 @@ let appController = (function (UICtrl, handleCtrl) {
 
 
     let startSearch = (jsonObj) => {
-        let username, url, sitename, errorMsg;
-
+        let username;
         username = document.getElementById(DOM.username).value;
 
         // traverse json
@@ -64,6 +87,9 @@ let appController = (function (UICtrl, handleCtrl) {
 
             if (username.length >= value.minChar) {
                 handleCtrl.searchUserName(username, key, value);
+            } else {
+                // length < min required
+                UICtrl.updateUI(key, 'invalid', value.urlMain);
             }
         });
 

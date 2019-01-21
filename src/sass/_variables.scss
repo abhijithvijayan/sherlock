@@ -43,6 +43,8 @@ $color-alice-blue:  #f8f9fa;
 $color-grey:        #495057;
 $color-blue:        #4dabf7;
 $color-yellow:      #F4D909;
+$color-azure-pink:  #2B2850;
+$color-red:         #b91d06;
 
 // other variables here
 .btn:focus, .btn:active {
@@ -60,4 +62,23 @@ section {
 
 .py-2-8 {
     padding: 0.999rem 0; 
+}
+
+.bg-avail {
+    background-color: $color-yellow !important;
+    &:hover {
+        background-color: blue !important;
+    }
+}
+
+.bg-taken {
+    background-color: $color-azure-pink !important;
+}
+
+.bg-grey {
+    background-color: $color-grey !important;
+}
+
+.bg-red {
+    background-color: $color-red !important;
 }

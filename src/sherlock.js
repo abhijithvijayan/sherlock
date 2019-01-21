@@ -26,23 +26,41 @@ export default class Sites {
             // console.log(errorMsg);
             if (response.data.includes(`${errorMsg}`)) {
                 // console.log("String found!!");
-                return 404;
-            } 
+
+                return {
+                    statusCode: 404,
+                    origUrl: value.urlMain
+                };
+            }
             // else if (window.location.href !== value.errorUrl) {
             //     console.log(response.request);
             //     return 404;
             // }
             // console.log(response.status);
-            return response.status;
+            // FOUND
+            return {
+                statusCode: response.status,
+                profileUrl: checkURL
+            };
 
         } catch (error) {
-            if (error.response) {
-                return error.response.status;
-            } else {
-                return 404;
+            if (error.code === 'ECONNABORTED') {
+                return {
+                    statusCode: 504,
+                    origUrl: value.urlMain
+                };
             }
-
-            // console.error(error);
+            else if (error.response) {
+                return {
+                    statusCode: error.response.status,
+                    origUrl: value.urlMain
+                };
+            } else {
+                return {
+                    statusCode: 404,
+                    origUrl: value.urlMain
+                };
+            }
         }
     }
 }
