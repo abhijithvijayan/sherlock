@@ -42,6 +42,7 @@ $color-white:       #fff;
 $color-alice-blue:  #f8f9fa;
 $color-grey:        #495057;
 $color-blue:        #4dabf7;
+$color-yellow:      #F4D909;
 
 // other variables here
 .btn:focus, .btn:active {
@@ -55,4 +56,8 @@ $color-blue:        #4dabf7;
 
 section {
     padding: 100px 0;
+}
+
+.py-2-8 {
+    padding: 0.999rem 0; 
 }
