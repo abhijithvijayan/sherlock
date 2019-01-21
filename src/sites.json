@@ -94,7 +94,7 @@
     "errorType": "status_code",
     "minChar": 2
   },
-  "About.me": {
+  "Aboutme": {
     "url": "https://about.me/{}",
     "urlMain": "https://about.me/",
     "errorType": "status_code",

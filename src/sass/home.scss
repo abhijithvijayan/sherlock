@@ -34,7 +34,10 @@
                 .social__site--card {
                     min-width: 100px;
                     border: 0px;
-                    border-radius: 10px;                
+                    border-radius: 10px;
+                    .social__logo--text {
+                        color: $color-white;
+                    }           
                     .social__site--link {
                         border-radius: 10px 10px 0 0;       
                         background-color: $color-blue;
@@ -42,6 +45,9 @@
                         i {
                             color: $color-white;
                             font-size: 3em;
+                        }
+                        &:hover {
+                            text-decoration: none;
                         }
                     }
                     .social__title--holder {    
