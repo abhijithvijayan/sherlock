@@ -8,6 +8,7 @@
             }
         }
         .form__holder {
+            margin-bottom: 5em;
             .form__holder--inner {
                 .form__holder--input {
                     #username__holder {
@@ -37,6 +38,7 @@
                     border-radius: 10px;
                     .social__logo--text {
                         color: $color-white;
+                        font-size: 12px;
                     }           
                     .social__site--link {
                         border-radius: 10px 10px 0 0;       

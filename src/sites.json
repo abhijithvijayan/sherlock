@@ -247,7 +247,7 @@
     "errorMsg": "We couldn't find what you were looking for.",
     "minChar": 1
   },
-  "last.fm": {
+  "lastfm": {
     "url": "https://last.fm/user/{}",
     "urlMain": "https://last.fm/",
     "errorType": "message",

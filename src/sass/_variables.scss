@@ -64,11 +64,12 @@ section {
     padding: 0.999rem 0; 
 }
 
+.py-2-5 {
+    padding: 0.75rem 0; 
+}
+
 .bg-avail {
     background-color: $color-yellow !important;
-    &:hover {
-        background-color: blue !important;
-    }
 }
 
 .bg-taken {

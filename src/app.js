@@ -50,7 +50,7 @@ let handleController = (function (UICtrl) {
             const user = new Sites(username, url);
             user.getUserName(value)
                 .then(result => {
-                    if (result.statusCode === 404) {
+                    if (result.statusCode === 404 || result.statusCode === 410) {
                         //   console.log(`${sitename}: Username Available!`);
                         UICtrl.updateUI(sitename, 'avail', result.origUrl);
 
