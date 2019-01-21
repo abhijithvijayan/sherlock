@@ -3,6 +3,9 @@
 @import "fonts";
 @import "variables";
 
+@import "home";
+
 body {
-  background: #fff;
+  background: $color-alice-blue;
+  font-family: $font-family-montserrat;
 }

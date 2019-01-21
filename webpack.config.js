@@ -8,7 +8,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = (env, options) => ({
-    entry: ['./src/main.js'],
+    entry: ['./src/app.js'],
     devServer: {
         port: 3000,
         contentBase: './dist'

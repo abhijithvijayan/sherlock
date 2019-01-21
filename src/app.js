@@ -1,77 +1,114 @@
-import Axios from 'axios';
-import json from './sites.json';
+import 'bootstrap';
+import './sass/main.scss';
+import Sites, { loadJSON } from './sherlock';
 
 
-// axios requests
-export default class Sites {
-    constructor(username, url) {
-        this.username = username;
-        this.url = url;
-    }
+// UI controller
+let UIController = (function () {
 
-    async getUserName(value) {
-        let errorMsg = value.errorMsg || 'Not Found';
-
-        let cors = 'https://cors-anywhere.herokuapp.com/';
-        let checkURL = this.url.replace('{}', this.username);
-
-        try {
-            const response = await Axios({
-                url: `${cors}${checkURL}`,
-                timeout: 10000
-            });
-            // console.log(response.data);
-            // Status: 200 But not exist
-            // console.log(errorMsg);
-            if (response.data.includes(`${errorMsg}`)) {
-                // console.log("String found!!");
-                return 404;
-            } 
-            // else if (window.location.href !== value.errorUrl) {
-            //     console.log(response.request);
-            //     return 404;
-            // }
-            // console.log(response.status);
-            return response.status;
+    const DOMStrings = {
+        username: 'username__holder',
+        submit_btn: '.username__submit--button'
+    };
 
 
-        } catch (error) {
-            if (error.response) {
-                // The request was made and the server responded with a status code that falls out of the range of 2xx
-                // console.log(error.response.data);
-                // console.log(error.response.headers);
+    return {
+        getDOMStrings: () => {
+            return DOMStrings;
+        }
+    };
 
-                // needed
-                // console.log(error.response.status);
+})();
 
-                return error.response.status;
 
-                // } else if (error.request) {
-                //     // The request was made but no response was received
-                //     console.log(error.request);
-            } else {
-                // needed
-                // console.log('Error', error.message);
+// Username Handler
+let handleController = (function () {
 
-                return 404;
-            }
+    return {
 
-            // console.error(error);
+        searchUserName: (username, key, value) => {
+            let url = value.url, sitename = key;
+            const user = new Sites(username, url);
+            user.getUserName(value)
+                .then(result => {
+                    if (result === 404) {
+                        console.log(`${sitename}: Username Available!`);
+                    } else if (result === 200) {
+                        console.log(`${sitename}: Username Taken!`);
+                    } else {
+                        console.log(`Status Code: ${result}`);
+                    }
+                });
+
         }
 
     }
 
-}
+})();
+
+// Global APP controller
+let appController = (function (UICtrl, handleCtrl) {
+    let DOM;
+    DOM = UICtrl.getDOMStrings();
 
 
-// json -> object
-export async function loadJSON() {
-    return await $.getJSON(json)
-        .then(data => {
-            // console.log(data);
-            return data;
-        })
-        .catch(err => {
-            console.log(err);
+    let startSearch = (jsonObj) => {
+        let username, url, sitename, errorMsg;
+
+        username = document.getElementById(DOM.username).value;
+
+        // traverse json
+        Object.entries(jsonObj).forEach(([key, value]) => {
+            // console.log(key);
+            // console.log(value);
+
+            if (username.length >= value.minChar) {
+                handleCtrl.searchUserName(username, key, value);
+            }
         });
-}
+
+    };
+
+
+    let extractJSON = () => {
+
+        loadJSON()
+            .then(jsonObj => {
+                startSearch(jsonObj);
+                //  console.log(jsonObj);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    };
+
+
+    let setUpEventListeners = () => {
+
+        // key press
+        document.addEventListener('keypress', (e) => {
+            let keyCode = e.which || e.keyCode;
+            // enter key
+            if (keyCode === 13) {
+                extractJSON();
+            }
+        });
+
+        // search button
+        document.querySelector(DOM.submit_btn).addEventListener('click', extractJSON);
+
+    };
+
+
+    return {
+
+        init: () => {
+            setUpEventListeners();
+        }
+    };
+
+
+})(UIController, handleController);
+
+// initialize
+appController.init();
