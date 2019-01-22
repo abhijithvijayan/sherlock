@@ -63,23 +63,22 @@ const handleController = ((UICtrl) => {
 
 
     // searching process
-    const searchUserName = (username, key, value) => {
+    const searchUserName = async (username, key, value) => {
         let url = value.url, sitename = key, countTaken = 0;
         const user = new Sites(username, url);
         return user.getUserName(value)
             .then(result => {
                 if (result.statusCode === 404 || result.statusCode === 410) {
-                    //   console.log(`${sitename}: Username Available!`);
                     UICtrl.updateUI(sitename, 'avail', result.origUrl);
                 } else if (result.statusCode === 200) {
-                    // console.log(`${sitename}: Username Taken!`);
                     ++countTaken;
                     UICtrl.updateUI(sitename, 'taken', result.profileUrl);
                     return countTaken;
                 } else if (result.statusCode === 504) {
                     UICtrl.updateUI(sitename, 'error', result.origUrl);
                 } else {
-                    console.log(`Status: ${result}`);
+                    console.log(`Status: ${result.statusCode}`);
+                    UICtrl.updateUI(sitename, 'error', result.origUrl);
                 }
             });
     };
@@ -94,16 +93,17 @@ const handleController = ((UICtrl) => {
                 // start searching
                 searchUserName(username, key, value).then(val => {
                     // sites count
-                    counter += val;
-                    UICtrl.updateCount(counter);
-                    console.log(counter);
+                    if (!isNaN(val)) {
+                        counter += val;
+                        UICtrl.updateCount(counter);
+                        console.log(counter);
+                    }
                 });
             } else {
                 // length < min required
                 UICtrl.updateUI(key, 'invalid', value.urlMain);
             }
         });
-
     };
 
 
@@ -115,7 +115,6 @@ const handleController = ((UICtrl) => {
             loadJSON()
                 .then(jsonObj => {
                     startSearch(jsonObj, username);
-                    //  console.log(jsonObj);
                 })
                 .catch(err => {
                     console.log(err);
