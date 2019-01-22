@@ -14,7 +14,7 @@
 <p align="center">https://abhijithvijayan.github.io/sherlock</p>
 <br>
 
-![](https://i.imgur.com/tMol0ef.gif)
+![](https://i.imgur.com/IvlDIbA.gif)
 
 A JavaScript fork of https://github.com/TheYahya/sherlock/
 

@@ -10,28 +10,39 @@ const UIController = (() => {
         username: 'username__holder',
         submit_btn: '.username__submit--button',
         spinner: '#progress__spinner',
-        counter: 'found__counter'
+        counter: 'found__counter',
+        tooltip: 'data-original-title',
+        short: 'Username too short',
+        error: 'There was an error!',
+        view: 'View Profile',
+        nouser: 'No Such User found'
     };
 
     const colorStatus = ['bg-avail', 'bg-taken', 'bg-grey', 'bg-red'];
 
-    const updateContent = (id, className, url) => {
+    const readytooltip = (id) => {
+        $(`#${id}`).tooltip({ trigger: 'hover' });
+    };
+
+    const updateContent = (id, className, url, title) => {
         let el = document.getElementById(id);
         el.classList.add(className);
         el.setAttribute('href', url);
+        el.setAttribute('data-original-title', title);
+        readytooltip(id);
     };
 
     return {
 
         updateUI: (sitename, status, url) => {
             if (status === 'avail') {
-                updateContent(sitename, colorStatus[0], url);
+                updateContent(sitename, colorStatus[0], url, DOMStrings.nouser);
             } else if (status === 'taken') {
-                updateContent(sitename, colorStatus[1], url);
+                updateContent(sitename, colorStatus[1], url, DOMStrings.view);
             } else if (status === 'invalid') {
-                updateContent(sitename, colorStatus[2], url);
+                updateContent(sitename, colorStatus[2], url, DOMStrings.short);
             } else if (status === 'error') {
-                updateContent(sitename, colorStatus[3], url);
+                updateContent(sitename, colorStatus[3], url, DOMStrings.error);
             }
         },
 
@@ -43,6 +54,7 @@ const UIController = (() => {
         resetClass: () => {
             for (let className of colorStatus) {
                 $('a').removeClass(className);
+                $('a').removeAttr(DOMStrings.tooltip);
             }
         },
 
@@ -148,6 +160,7 @@ const appController = ((UICtrl, handleCtrl) => {
             if (keyCode === 13) {
                 username = readUsername();
                 UICtrl.resetClass();
+                UICtrl.removeClass(DOM.spinner, 'v-none');
                 handleCtrl.extractJSON(username);
             }
         });

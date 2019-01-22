@@ -31,7 +31,7 @@
     "errorType": "status_code",
     "minChar": 1
   },
-  "Google Plus": {
+  "GooglePlus": {
     "url": "https://plus.google.com/+{}",
     "urlMain": "https://plus.google.com/",
     "errorType": "status_code",
