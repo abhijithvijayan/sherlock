@@ -8,7 +8,9 @@ const UIController = (() => {
 
     const DOMStrings = {
         username: 'username__holder',
-        submit_btn: '.username__submit--button'
+        submit_btn: '.username__submit--button',
+        spinner: '#progress__spinner',
+        counter: 'found__counter'
     };
 
     const colorStatus = ['bg-avail', 'bg-taken', 'bg-grey', 'bg-red'];
@@ -33,6 +35,10 @@ const UIController = (() => {
             }
         },
 
+        updateCount: (count) => {
+            document.getElementById(DOMStrings.counter).textContent = count;
+        },
+
 
         resetClass: () => {
             for (let className of colorStatus) {
@@ -40,6 +46,9 @@ const UIController = (() => {
             }
         },
 
+        removeClass: (id, className) => {
+            $(id).removeClass(className);
+        },
 
         getDOMStrings: () => {
             return DOMStrings;
@@ -52,19 +61,49 @@ const UIController = (() => {
 // Username Handler
 const handleController = ((UICtrl) => {
 
+
+    // searching process
+    const searchUserName = (username, key, value) => {
+        let url = value.url, sitename = key, countTaken = 0;
+        const user = new Sites(username, url);
+        return user.getUserName(value)
+            .then(result => {
+                if (result.statusCode === 404 || result.statusCode === 410) {
+                    //   console.log(`${sitename}: Username Available!`);
+                    UICtrl.updateUI(sitename, 'avail', result.origUrl);
+                } else if (result.statusCode === 200) {
+                    // console.log(`${sitename}: Username Taken!`);
+                    ++countTaken;
+                    UICtrl.updateUI(sitename, 'taken', result.profileUrl);
+                    return countTaken;
+                } else if (result.statusCode === 504) {
+                    UICtrl.updateUI(sitename, 'error', result.origUrl);
+                } else {
+                    console.log(`Status: ${result}`);
+                }
+            });
+    };
+
     // Search Handler
     const startSearch = (jsonObj, username) => {
+        let counter = 0;
         // traverse json
         Object.entries(jsonObj).forEach(([key, value]) => {
             // proceed if length satifies
             if (username.length >= value.minChar) {
                 // start searching
-                handleController.searchUserName(username, key, value);
+                searchUserName(username, key, value).then(val => {
+                    // sites count
+                    counter += val;
+                    UICtrl.updateCount(counter);
+                    console.log(counter);
+                });
             } else {
                 // length < min required
                 UICtrl.updateUI(key, 'invalid', value.urlMain);
             }
         });
+
     };
 
 
@@ -80,26 +119,6 @@ const handleController = ((UICtrl) => {
                 })
                 .catch(err => {
                     console.log(err);
-                });
-        },
-
-        // searching process
-        searchUserName: (username, key, value) => {
-            let url = value.url, sitename = key;
-            const user = new Sites(username, url);
-            user.getUserName(value)
-                .then(result => {
-                    if (result.statusCode === 404 || result.statusCode === 410) {
-                        //   console.log(`${sitename}: Username Available!`);
-                        UICtrl.updateUI(sitename, 'avail', result.origUrl);
-                    } else if (result.statusCode === 200) {
-                        // console.log(`${sitename}: Username Taken!`);
-                        UICtrl.updateUI(sitename, 'taken', result.profileUrl);
-                    } else if (result.statusCode === 504) {
-                        UICtrl.updateUI(sitename, 'error', result.origUrl);
-                    } else {
-                        console.log(`Status: ${result}`);
-                    }
                 });
         }
 
@@ -138,6 +157,7 @@ const appController = ((UICtrl, handleCtrl) => {
         document.querySelector(DOM.submit_btn).addEventListener('click', () => {
             let username = readUsername();
             UICtrl.resetClass();
+            UICtrl.removeClass(DOM.spinner, 'v-none');
             handleCtrl.extractJSON(username);
         });
 

@@ -20,3 +20,6 @@ A JavaScript fork of https://github.com/TheYahya/sherlock/
 
 N.B.
 Under Development. More Sites are being added.
+
+## Licence
+Code released under the [MIT License](LICENSE).
