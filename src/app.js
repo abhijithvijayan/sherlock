@@ -167,6 +167,7 @@ const appController = ((UICtrl, handleCtrl) => {
 
         // search button
         document.querySelector(DOM.submit_btn).addEventListener('click', () => {
+            alert('You might face issue due to high traffic now. I am Working on it to fix it.');
             let username = readUsername();
             UICtrl.resetClass();
             UICtrl.removeClass(DOM.spinner, 'v-none');
