@@ -4,7 +4,7 @@ import Sites, { loadJSON } from './sherlock';
 
 
 // UI controller
-let UIController = (function () {
+const UIController = (() => {
 
     const DOMStrings = {
         username: 'username__holder',
@@ -33,11 +33,13 @@ let UIController = (function () {
             }
         },
 
+
         resetClass: () => {
             for (let className of colorStatus) {
                 $('a').removeClass(className);
             }
         },
+
 
         getDOMStrings: () => {
             return DOMStrings;
@@ -48,10 +50,40 @@ let UIController = (function () {
 
 
 // Username Handler
-let handleController = (function (UICtrl) {
+const handleController = ((UICtrl) => {
+
+    // Search Handler
+    const startSearch = (jsonObj, username) => {
+        // traverse json
+        Object.entries(jsonObj).forEach(([key, value]) => {
+            // proceed if length satifies
+            if (username.length >= value.minChar) {
+                // start searching
+                handleController.searchUserName(username, key, value);
+            } else {
+                // length < min required
+                UICtrl.updateUI(key, 'invalid', value.urlMain);
+            }
+        });
+    };
+
 
     return {
 
+        // json extrator
+        extractJSON: (username) => {
+            // call async 
+            loadJSON()
+                .then(jsonObj => {
+                    startSearch(jsonObj, username);
+                    //  console.log(jsonObj);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        },
+
+        // searching process
         searchUserName: (username, key, value) => {
             let url = value.url, sitename = key;
             const user = new Sites(username, url);
@@ -60,7 +92,6 @@ let handleController = (function (UICtrl) {
                     if (result.statusCode === 404 || result.statusCode === 410) {
                         //   console.log(`${sitename}: Username Available!`);
                         UICtrl.updateUI(sitename, 'avail', result.origUrl);
-
                     } else if (result.statusCode === 200) {
                         // console.log(`${sitename}: Username Taken!`);
                         UICtrl.updateUI(sitename, 'taken', result.profileUrl);
@@ -70,68 +101,44 @@ let handleController = (function (UICtrl) {
                         console.log(`Status: ${result}`);
                     }
                 });
-
         }
 
     }
 
 })(UIController);
 
+
 // Global APP controller
-let appController = (function (UICtrl, handleCtrl) {
-    let DOM;
-    DOM = UICtrl.getDOMStrings();
+const appController = ((UICtrl, handleCtrl) => {
+    let DOM = UICtrl.getDOMStrings();
 
-
-    let startSearch = (jsonObj) => {
+    // obtain from input
+    const readUsername = () => {
         let username;
         username = document.getElementById(DOM.username).value;
-
-        // traverse json
-        Object.entries(jsonObj).forEach(([key, value]) => {
-            // console.log(key);
-            // console.log(value);
-
-            if (username.length >= value.minChar) {
-                handleCtrl.searchUserName(username, key, value);
-            } else {
-                // length < min required
-                UICtrl.updateUI(key, 'invalid', value.urlMain);
-            }
-        });
-
+        return username;
     };
 
-
-    let extractJSON = () => {
-
-        loadJSON()
-            .then(jsonObj => {
-                startSearch(jsonObj);
-                //  console.log(jsonObj);
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    };
-
-
-    let setUpEventListeners = () => {
+    // respond to events
+    const setUpEventListeners = () => {
 
         // key press
         document.addEventListener('keypress', (e) => {
             let keyCode = e.which || e.keyCode;
+            let username;
             // enter key
             if (keyCode === 13) {
+                username = readUsername();
                 UICtrl.resetClass();
-                extractJSON();
+                handleCtrl.extractJSON(username);
             }
         });
 
         // search button
         document.querySelector(DOM.submit_btn).addEventListener('click', () => {
+            let username = readUsername();
             UICtrl.resetClass();
-            extractJSON();
+            handleCtrl.extractJSON(username);
         });
 
     };
@@ -139,6 +146,7 @@ let appController = (function (UICtrl, handleCtrl) {
 
     return {
 
+        // start 
         init: () => {
             setUpEventListeners();
         }
@@ -146,6 +154,7 @@ let appController = (function (UICtrl, handleCtrl) {
 
 
 })(UIController, handleController);
+
 
 // initialize
 appController.init();

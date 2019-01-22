@@ -9,8 +9,10 @@
     <img src="https://img.shields.io/github/license/abhijithvijayan/sherlock.svg" alt="LICENSE" />
   </a>
 </div>
+
 <br>
-<p align="center">http://abhijithvijayan.github.io/sherlock</p>
+<p align="center">https://abhijithvijayan.github.io/sherlock</p>
+<br>
 
 ![](https://i.imgur.com/tMol0ef.gif)
 
