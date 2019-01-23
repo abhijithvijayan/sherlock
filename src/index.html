@@ -52,11 +52,14 @@
                 </div>
             </form>
 
-            <div class="row justify-content-center pt-5 text-center v-none" id="progress__spinner">
-                <div class="col-md-6">
+            <div class="row justify-content-center pt-5 text-center">
+                <div class="col-md-6 d-none" id="progress__spinner">
                     <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
                     <span>Searching...</span>
                     <p class="pt-3">Found <span id="found__counter">0</span> so far</p>
+                </div>
+                <div class="col-md-6 d-none" id="end__results">
+                    <p><span id="total__sites--found">10</span> Results found from <span id="total__sites--all">20</span> websites.</p>
                 </div>
             </div>
 

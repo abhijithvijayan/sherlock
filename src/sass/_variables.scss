@@ -83,6 +83,9 @@ section {
     img {
         opacity: 0.5;
     }
+    p {
+        opacity: 0.5;
+    }
 }
 
 .bg-taken {
@@ -96,6 +99,9 @@ section {
         color: rgba($color: $color-white, $alpha: 0.5) !important;
     }
     img {
+        opacity: 0.5;
+    }
+    p {
         opacity: 0.5;
     }
 }

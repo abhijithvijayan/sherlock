@@ -2,15 +2,21 @@ import 'bootstrap';
 import './sass/main.scss';
 import Sites, { loadJSON } from './sherlock';
 
+let siteCount;
 
 // UI controller
 const UIController = (() => {
+
+    let sitePassed = 0;
 
     const DOMStrings = {
         username: 'username__holder',
         submit_btn: '.username__submit--button',
         spinner: '#progress__spinner',
+        result: '#end__results',
         counter: 'found__counter',
+        foundCount: 'total__sites--found',
+        totalCount: 'total__sites--all',
         tooltip: 'data-original-title',
         short: 'Username too short',
         error: 'There was an error!',
@@ -25,6 +31,7 @@ const UIController = (() => {
     };
 
     const updateContent = (id, className, url, title) => {
+        ++sitePassed;
         let el = document.getElementById(id);
         el.classList.add(className);
         // add to the child div
@@ -36,6 +43,20 @@ const UIController = (() => {
         el.setAttribute('href', url);
         el.setAttribute('data-original-title', title);
         readytooltip(id);
+        // console.log(siteCount);
+
+        if (sitePassed === siteCount) {
+
+             setInterval(() => {
+                $(DOMStrings.spinner).addClass('d-none');
+                // to be fixed
+                UIController.updateCount(DOMStrings.foundCount, 25);
+                UIController.updateCount(DOMStrings.totalCount, siteCount);
+                $(DOMStrings.result).removeClass('d-none');
+             }, 1000);
+
+        }
+
     };
 
     return {
@@ -52,8 +73,8 @@ const UIController = (() => {
             }
         },
 
-        updateCount: (count) => {
-            document.getElementById(DOMStrings.counter).textContent = count;
+        updateCount: (id, count) => {
+            document.getElementById(id).textContent = count;
         },
 
 
@@ -80,7 +101,8 @@ const UIController = (() => {
 // Username Handler
 const handleController = ((UICtrl) => {
 
-
+    let DOM = UICtrl.getDOMStrings();
+    
     // searching process
     const searchUserName = async (username, key, value) => {
         let url = value.url, sitename = key, countTaken = 0;
@@ -102,9 +124,11 @@ const handleController = ((UICtrl) => {
             });
     };
 
+
     // Search Handler
     const startSearch = (jsonObj, username) => {
         let counter = 0;
+        siteCount = 0;
         // traverse json
         Object.entries(jsonObj).forEach(([key, value]) => {
             // proceed if length satifies
@@ -114,15 +138,17 @@ const handleController = ((UICtrl) => {
                     // sites count
                     if (!isNaN(val)) {
                         counter += val;
-                        UICtrl.updateCount(counter);
-                        console.log(counter);
+                        UICtrl.updateCount(DOM.counter, counter);
+                      //  console.log(counter);
                     }
                 });
             } else {
                 // length < min required
                 UICtrl.updateUI(key, 'invalid', value.urlMain);
             }
+            ++siteCount;
         });
+        console.log(siteCount);
     };
 
 
@@ -138,6 +164,10 @@ const handleController = ((UICtrl) => {
                 .catch(err => {
                     console.log(err);
                 });
+        },
+
+        getSiteCount: () => {
+            return siteCount;
         }
 
     }
@@ -148,12 +178,19 @@ const handleController = ((UICtrl) => {
 // Global APP controller
 const appController = ((UICtrl, handleCtrl) => {
     let DOM = UICtrl.getDOMStrings();
+    let username;
 
     // obtain from input
     const readUsername = () => {
-        let username;
         username = document.getElementById(DOM.username).value;
-        return username;
+    };
+
+    const start = () => {
+       readUsername();
+       UICtrl.resetClass();
+       UICtrl.removeClass(DOM.spinner, 'd-none');
+       $(DOM.result).addClass('d-none');
+       handleCtrl.extractJSON(username);
     };
 
     // respond to events
@@ -162,23 +199,16 @@ const appController = ((UICtrl, handleCtrl) => {
         // key press
         document.addEventListener('keypress', (e) => {
             let keyCode = e.which || e.keyCode;
-            let username;
             // enter key
             if (keyCode === 13) {
-                username = readUsername();
-                UICtrl.resetClass();
-                UICtrl.removeClass(DOM.spinner, 'v-none');
-                handleCtrl.extractJSON(username);
+                start();
             }
         });
 
         // search button
         document.querySelector(DOM.submit_btn).addEventListener('click', () => {
             alert('You might face issue due to high traffic now. I am Working on it to fix it.');
-            let username = readUsername();
-            UICtrl.resetClass();
-            UICtrl.removeClass(DOM.spinner, 'v-none');
-            handleCtrl.extractJSON(username);
+            start();
         });
 
     };
