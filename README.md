@@ -14,12 +14,15 @@
 <p align="center">https://abhijithvijayan.github.io/sherlock</p>
 <br>
 
-![](https://i.imgur.com/IvlDIbA.gif)
+![](https://i.imgur.com/zHFLS5F.gif)
 
 A JavaScript fork of https://github.com/TheYahya/sherlock/
 
 N.B.
 Under Development. More Sites are being added.
+
+## Contributing and Support
+View the Contributing guidelines [here](CONTRIBUTING.md).
 
 ## Licence
 Code released under the [MIT License](LICENSE).

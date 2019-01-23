@@ -2,12 +2,10 @@ import 'bootstrap';
 import './sass/main.scss';
 import Sites, { loadJSON } from './sherlock';
 
-let siteCount;
+let siteCount, counterFound, sitePassed;
 
 // UI controller
 const UIController = (() => {
-
-    let sitePassed = 0;
 
     const DOMStrings = {
         username: 'username__holder',
@@ -24,11 +22,14 @@ const UIController = (() => {
         nouser: 'No Such User found'
     };
 
+
     const colorStatus = ['bg-avail', 'bg-taken', 'bg-grey', 'bg-red'];
+
 
     const readytooltip = (id) => {
         $(`#${id}`).tooltip({ trigger: 'hover' });
     };
+
 
     const updateContent = (id, className, url, title) => {
         ++sitePassed;
@@ -40,26 +41,26 @@ const UIController = (() => {
         } else if (className === colorStatus[2]) {
             el.parentNode.children[1].classList.add(colorStatus[2]);
         }
+
         el.setAttribute('href', url);
         el.setAttribute('data-original-title', title);
         readytooltip(id);
-        // console.log(siteCount);
 
-        if (sitePassed === siteCount) {
-
-             setInterval(() => {
-                $(DOMStrings.spinner).addClass('d-none');
-                // to be fixed
-                UIController.updateCount(DOMStrings.foundCount, 25);
-                UIController.updateCount(DOMStrings.totalCount, siteCount);
-                $(DOMStrings.result).removeClass('d-none');
-             }, 1000);
-
+        // console.log('sitepassed: ' + sitePassed);
+        // console.log(siteCount === sitePassed);
+        console.log('sitepassed: ' + sitePassed + ' sitecount:' + siteCount);
+        if ((siteCount === sitePassed) === true) {
+            // update UI
+            UIController.updateCount(DOMStrings.foundCount, counterFound);
+            UIController.updateCount(DOMStrings.totalCount, siteCount);
+            $(DOMStrings.spinner).addClass('d-none');
+            $(DOMStrings.result).removeClass('d-none');
         }
 
     };
 
     return {
+
 
         updateUI: (sitename, status, url) => {
             if (status === 'avail') {
@@ -72,6 +73,7 @@ const UIController = (() => {
                 updateContent(sitename, colorStatus[3], url, DOMStrings.error);
             }
         },
+
 
         updateCount: (id, count) => {
             document.getElementById(id).textContent = count;
@@ -86,9 +88,11 @@ const UIController = (() => {
             }
         },
 
+
         removeClass: (id, className) => {
             $(id).removeClass(className);
         },
+
 
         getDOMStrings: () => {
             return DOMStrings;
@@ -102,7 +106,7 @@ const UIController = (() => {
 const handleController = ((UICtrl) => {
 
     let DOM = UICtrl.getDOMStrings();
-    
+
     // searching process
     const searchUserName = async (username, key, value) => {
         let url = value.url, sitename = key, countTaken = 0;
@@ -127,28 +131,27 @@ const handleController = ((UICtrl) => {
 
     // Search Handler
     const startSearch = (jsonObj, username) => {
-        let counter = 0;
+        counterFound = 0;
         siteCount = 0;
         // traverse json
         Object.entries(jsonObj).forEach(([key, value]) => {
+            ++siteCount;
             // proceed if length satifies
             if (username.length >= value.minChar) {
                 // start searching
                 searchUserName(username, key, value).then(val => {
                     // sites count
                     if (!isNaN(val)) {
-                        counter += val;
-                        UICtrl.updateCount(DOM.counter, counter);
-                      //  console.log(counter);
+                        counterFound += val;
+                        UICtrl.updateCount(DOM.counter, counterFound);
                     }
+                    console.log("Found:"+ counterFound);
                 });
             } else {
                 // length < min required
                 UICtrl.updateUI(key, 'invalid', value.urlMain);
             }
-            ++siteCount;
         });
-        console.log(siteCount);
     };
 
 
@@ -160,14 +163,10 @@ const handleController = ((UICtrl) => {
             loadJSON()
                 .then(jsonObj => {
                     startSearch(jsonObj, username);
-                })
-                .catch(err => {
-                    console.log(err);
                 });
-        },
-
-        getSiteCount: () => {
-            return siteCount;
+            // .catch(err => {
+            //     console.log(err);
+            // });
         }
 
     }
@@ -177,21 +176,26 @@ const handleController = ((UICtrl) => {
 
 // Global APP controller
 const appController = ((UICtrl, handleCtrl) => {
-    let DOM = UICtrl.getDOMStrings();
-    let username;
+
+    let DOM = UICtrl.getDOMStrings(), username;
 
     // obtain from input
     const readUsername = () => {
         username = document.getElementById(DOM.username).value;
     };
 
+
     const start = () => {
-       readUsername();
-       UICtrl.resetClass();
-       UICtrl.removeClass(DOM.spinner, 'd-none');
-       $(DOM.result).addClass('d-none');
-       handleCtrl.extractJSON(username);
+        alert('You might face issue due to high traffic now. I am Working on it to fix it.');
+        readUsername();
+        sitePassed = 0;
+        UICtrl.updateCount(DOM.counter, 0);
+        UICtrl.removeClass(DOM.spinner, 'd-none');
+        $(DOM.result).addClass('d-none');
+        UICtrl.resetClass();
+        handleCtrl.extractJSON(username);
     };
+
 
     // respond to events
     const setUpEventListeners = () => {
@@ -206,10 +210,7 @@ const appController = ((UICtrl, handleCtrl) => {
         });
 
         // search button
-        document.querySelector(DOM.submit_btn).addEventListener('click', () => {
-            alert('You might face issue due to high traffic now. I am Working on it to fix it.');
-            start();
-        });
+        document.querySelector(DOM.submit_btn).addEventListener('click', start);
 
     };
 
