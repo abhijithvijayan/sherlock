@@ -4,6 +4,9 @@ import Sites, { loadJSON } from './sherlock';
 
 let siteCount, counterFound, sitePassed;
 
+// array for objects
+let errorKeyStore = [];
+
 // UI controller
 const UIController = (() => {
 
@@ -49,12 +52,16 @@ const UIController = (() => {
         // console.log('sitepassed: ' + sitePassed);
         // console.log(siteCount === sitePassed);
         console.log('sitepassed: ' + sitePassed + ' sitecount:' + siteCount);
+
         if ((siteCount === sitePassed) === true) {
-            // update UI
-            UIController.updateCount(DOMStrings.foundCount, counterFound);
-            UIController.updateCount(DOMStrings.totalCount, siteCount);
             $(DOMStrings.spinner).addClass('d-none');
             $(DOMStrings.result).removeClass('d-none');
+            console.log(errorKeyStore);
+
+            for (let entry of errorKeyStore) {
+                sitePassed = -1;
+                UIController.updateUI(entry.key, 'invalid', entry.mainUrl);
+            }
         }
 
     };
@@ -143,13 +150,20 @@ const handleController = ((UICtrl) => {
                     // sites count
                     if (!isNaN(val)) {
                         counterFound += val;
+                        // update UI
                         UICtrl.updateCount(DOM.counter, counterFound);
+                        UICtrl.updateCount(DOM.foundCount, counterFound);
+                        UICtrl.updateCount(DOM.totalCount, siteCount);
                     }
-                    console.log("Found:"+ counterFound);
+                    console.log("Found:" + counterFound);
                 });
             } else {
                 // length < min required
-                UICtrl.updateUI(key, 'invalid', value.urlMain);
+
+                // store these keys to an array
+                // traverse after count is reached
+                errorKeyStore.push({ key: key, mainUrl: value.urlMain });
+                ++sitePassed;
             }
         });
     };
@@ -189,6 +203,7 @@ const appController = ((UICtrl, handleCtrl) => {
         alert('You might face issue due to high traffic now. I am Working on it to fix it.');
         readUsername();
         sitePassed = 0;
+        errorKeyStore = [];
         UICtrl.updateCount(DOM.counter, 0);
         UICtrl.removeClass(DOM.spinner, 'd-none');
         $(DOM.result).addClass('d-none');
