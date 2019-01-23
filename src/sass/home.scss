@@ -29,13 +29,10 @@
             .social__site--content {
                 min-width: 100px;
                 margin: 0.5em;
-                padding: 0;
-                background-color: $color-white;
-                border-radius: 10px;                
+                padding: 0;             
                 .social__site--card {
                     min-width: 100px;
                     border: 0px;
-                    border-radius: 10px;
                     .social__logo--text {
                         color: $color-white;
                         font-size: 12px;
@@ -52,7 +49,10 @@
                             text-decoration: none;
                         }
                     }
-                    .social__title--holder {    
+                    .social__title--holder {
+                        border-radius: 0 0 10px 10px;
+                        background-color: $color-white;
+                        color: $color-black;
                         padding: 0.7em 0;
                         text-align: center;                    
                         .social__site--title {

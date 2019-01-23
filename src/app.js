@@ -27,6 +27,12 @@ const UIController = (() => {
     const updateContent = (id, className, url, title) => {
         let el = document.getElementById(id);
         el.classList.add(className);
+        // add to the child div
+        if (className === colorStatus[0]) {
+            el.parentNode.children[1].classList.add(colorStatus[0]);
+        } else if (className === colorStatus[2]) {
+            el.parentNode.children[1].classList.add(colorStatus[2]);
+        }
         el.setAttribute('href', url);
         el.setAttribute('data-original-title', title);
         readytooltip(id);
@@ -54,6 +60,7 @@ const UIController = (() => {
         resetClass: () => {
             for (let className of colorStatus) {
                 $('a').removeClass(className);
+                $('div').removeClass(className);
                 $('a').removeAttr(DOMStrings.tooltip);
             }
         },

@@ -39,12 +39,14 @@ $font-weight-black:         900;
 /* Colors */
 
 $color-white:       #fff;
+$color-black:       #0d0d0d;
 $color-alice-blue:  #f8f9fa;
 $color-grey:        #495057;
 $color-blue:        #4dabf7;
 $color-yellow:      #F4D909;
 $color-azure-pink:  #2B2850;
 $color-red:         #b91d06;
+$color-bg-purple:   #1a1a24;
 
 // other variables here
 .btn:focus, .btn:active {
@@ -54,6 +56,10 @@ $color-red:         #b91d06;
 
 .pt-20 {
     padding-top: 20px;
+}
+
+.card {
+    background-color: transparent !important;
 }
 
 section {
@@ -69,15 +75,29 @@ section {
 }
 
 .bg-avail {
-    background-color: $color-yellow !important;
+    background-color: $color-azure-pink !important;
+    color: rgba($color: $color-white, $alpha: 0.5) !important;
+    i {
+        color: rgba($color: $color-white, $alpha: 0.5) !important;
+    }
+    img {
+        opacity: 0.5;
+    }
 }
 
 .bg-taken {
-    background-color: $color-azure-pink !important;
+    background-color: $color-yellow !important;
 }
 
 .bg-grey {
     background-color: $color-grey !important;
+    color: rgba($color: $color-white, $alpha: 0.5) !important;
+    i {
+        color: rgba($color: $color-white, $alpha: 0.5) !important;
+    }
+    img {
+        opacity: 0.5;
+    }
 }
 
 .bg-red {
