@@ -193,22 +193,34 @@ const appController = ((UICtrl, handleCtrl) => {
 
     let DOM = UICtrl.getDOMStrings(), username;
 
-    // obtain from input
+    const usernameValidator = () => {
+        let regex = /^[0-9a-zA-Z_-]+$/;
+        let isValid = username.match(regex) && username.length !== 0;
+        return isValid;
+    };
+
+
+    // // obtain from input
     const readUsername = () => {
         username = document.getElementById(DOM.username).value;
     };
 
 
     const start = () => {
-        alert('You might face issue due to high traffic now. I am Working on it to fix it.');
         readUsername();
-        sitePassed = 0;
-        errorKeyStore = [];
-        UICtrl.updateCount(DOM.counter, 0);
-        UICtrl.removeClass(DOM.spinner, 'd-none');
-        $(DOM.result).addClass('d-none');
-        UICtrl.resetClass();
-        handleCtrl.extractJSON(username);
+        let isValid = usernameValidator();
+        if(isValid) {
+            alert('You might face issue due to high traffic now. I am Working on it to fix it.');
+            sitePassed = 0;
+            errorKeyStore = [];
+            UICtrl.updateCount(DOM.counter, 0);
+            UICtrl.removeClass(DOM.spinner, 'd-none');
+            $(DOM.result).addClass('d-none');
+            UICtrl.resetClass();
+            handleCtrl.extractJSON(username);
+        } else {
+            alert('Enter Valid Username!');
+        }
     };
 
 
@@ -221,6 +233,7 @@ const appController = ((UICtrl, handleCtrl) => {
             // enter key
             if (keyCode === 13) {
                 start();
+                e.preventDefault();
             }
         });
 
