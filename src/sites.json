@@ -1,258 +1,351 @@
 {
-  "9GAG": {
-      "errorType": "status_code",
-      "minChar": 3,
-      "url": "https://9gag.com/u/{}",
-      "urlMain": "https://9gag.com/"
-  },
-  "Aboutme": {
-      "errorType": "status_code",
-      "minChar": 3,
-      "url": "https://about.me/{}",
-      "urlMain": "https://about.me/"
-  },
-  "Behance": {
-      "errorMsg": "Oops! We can’t find that page.",
-      "errorType": "message",
-      "minChar": 3,
-      "url": "https://www.behance.net/{}",
-      "urlMain": "https://www.behance.net/"
-  },
-  "BitBucket": {
-      "errorType": "status_code",
-      "minChar": 1,
-      "url": "https://bitbucket.org/{}",
-      "urlMain": "https://bitbucket.org/"
-  },
-  "Blogger": {
-      "errorType": "status_code",
-      "minChar": 1,
-      "url": "https://{}.blogspot.com",
-      "urlMain": "https://www.blogger.com/"
-  },
-  "CashMe": {
-      "errorType": "status_code",
-      "minChar": 3,
-      "url": "https://cash.me/{}",
-      "urlMain": "https://cash.me/"
-  },
-  "Codecademy": {
-      "errorMsg": "404 error",
-      "errorType": "message",
-      "minChar": 1,
-      "url": "https://www.codecademy.com/{}",
-      "urlMain": "https://www.codecademy.com/"
-  },
-  "DailyMotion": {
-      "errorType": "status_code",
-      "minChar": 3,
-      "url": "https://www.dailymotion.com/{}",
-      "urlMain": "https://www.dailymotion.com/"
-  },
-  "DeviantART": {
-      "errorType": "status_code",
-      "minChar": 3,
-      "url": "https://{}.deviantart.com",
-      "urlMain": "https://deviantart.com"
-  },
-  "Disqus": {
-      "errorType": "status_code",
-      "minChar": 2,
-      "url": "https://disqus.com/{}",
-      "urlMain": "https://disqus.com/"
-  },
-  "Dribbble": {
-      "errorMsg": "Whoops, that page is gone.",
-      "errorType": "message",
-      "minChar": 2,
-      "url": "https://dribbble.com/{}",
-      "urlMain": "https://dribbble.com/"
-  },
-  "Etsy": {
-      "errorType": "status_code",
-      "minChar": 3,
-      "url": "https://www.etsy.com/shop/{}",
-      "urlMain": "https://www.etsy.com/"
-  },
-  "Facebook": {
-      "errorMsg": "The link you followed may be broken",
-      "errorType": "message",
-      "minChar": 5,
-      "url": "https://www.facebook.com/{}",
-      "urlMain": "https://www.facebook.com/"
-  },
-  "Flipboard": {
-      "errorMsg": "loading...",
-      "errorType": "message",
-      "minChar": 1,
-      "url": "https://flipboard.com/@{}",
-      "urlMain": "https://flipboard.com/"
-  },
-  "Fotolog": {
-      "errorType": "status_code",
-      "minChar": 3,
-      "url": "https://fotolog.com/{}",
-      "urlMain": "https://fotolog.com/"
-  },
-  "GitHub": {
-      "errorType": "status_code",
-      "minChar": 1,
-      "url": "https://www.github.com/{}",
-      "urlMain": "https://www.github.com/"
-  },
-  "GoodReads": {
-      "errorType": "status_code",
-      "minChar": 4,
-      "url": "https://www.goodreads.com/{}",
-      "urlMain": "https://www.goodreads.com/"
-  },
-  "GooglePlus": {
-      "errorType": "status_code",
-      "minChar": 4,
-      "url": "https://plus.google.com/+{}",
-      "urlMain": "https://plus.google.com/"
-  },
-  "Gravatar": {
-      "errorType": "status_code",
-      "minChar": 2,
-      "url": "http://en.gravatar.com/{}",
-      "urlMain": "http://en.gravatar.com/"
-  },
-  "Imgur": {
-      "errorType": "status_code",
-      "minChar": 3,
-      "url": "https://imgur.com/user/{}",
-      "urlMain": "https://imgur.com/"
-  },
-  "Instagram": {
-      "errorMsg": "The link you followed may be broken",
-      "errorType": "message",
-      "minChar": 5,
-      "url": "https://www.instagram.com/{}",
-      "urlMain": "https://www.instagram.com/"
-  },
-  "Instructables": {
-      "errorMsg": "404: We're sorry, things break sometimes",
-      "errorType": "message",
-      "minChar": 1,
-      "url": "https://www.instructables.com/member/{}",
-      "urlMain": "https://www.instructables.com/"
-  },
-  "Keybase": {
-      "errorType": "status_code",
-      "minChar": 2,
-      "url": "https://keybase.io/{}",
-      "urlMain": "https://keybase.io/"
-  },
-  "Kongregate": {
-      "errorMsg": "Sorry, no account with that name was found.",
-      "errorType": "message",
-      "minChar": 4,
-      "url": "https://www.kongregate.com/accounts/{}",
-      "urlMain": "https://www.kongregate.com/"
-  },
-  "lastfm": {
-      "errorMsg": "Whoops! Sorry, but this page doesn't exist.",
-      "errorType": "message",
-      "minChar": 1,
-      "url": "https://last.fm/user/{}",
-      "urlMain": "https://last.fm/"
-  },
-  "LiveJournal": {
-      "errorMsg": "Unknown Journal",
-      "errorType": "message",
-      "minChar": 1,
-      "url": "https://{}.livejournal.com",
-      "urlMain": "https://www.livejournal.com/"
-  },
-  "Medium": {
-      "errorType": "status_code",
-      "minChar": 1,
-      "url": "https://medium.com/@{}",
-      "urlMain": "https://medium.com/"
-  },
-  "Patreon": {
-      "errorType": "status_code",
-      "minChar": 1,
-      "url": "https://www.patreon.com/{}",
-      "urlMain": "https://www.patreon.com/"
-  },
-  "Reddit": {
-      "errorMsg": "page not found",
-      "errorType": "message",
-      "minChar": 3,
-      "url": "https://www.reddit.com/user/{}",
-      "urlMain": "https://www.reddit.com/"
-  },
-  "Roblox": {
-      "errorMsg": "Page cannot be found or no longer exists",
-      "errorType": "message",
-      "minChar": 3,
-      "url": "https://www.roblox.com/user.aspx?username={}",
-      "urlMain": "https://www.roblox.com/"
-  },
-  "Scribd": {
-      "errorMsg": "Page not found",
-      "errorType": "message",
-      "minChar": 1,
-      "url": "https://www.scribd.com/{}",
-      "urlMain": "https://www.scribd.com/"
-  },
-  "SlideShare": {
-      "errorType": "status_code",
-      "minChar": 2,
-      "url": "https://slideshare.net/{}",
-      "urlMain": "https://slideshare.net/"
-  },
-  "SoundCloud": {
-      "errorType": "status_code",
-      "minChar": 2,
-      "url": "https://soundcloud.com/{}",
-      "urlMain": "https://soundcloud.com/"
-  },
-  "Spotify": {
-      "errorType": "status_code",
-      "minChar": 1,
-      "url": "https://open.spotify.com/user/{}",
-      "urlMain": "https://open.spotify.com/"
-  },
-  "Steam": {
-      "errorMsg": "The specified profile could not be found",
-      "errorType": "message",
-      "minChar": 2,
-      "url": "https://steamcommunity.com/id/{}",
-      "urlMain": "https://steamcommunity.com/"
-  },
-  "Twitter": {
-      "errorMsg": "page doesn't exist",
-      "errorType": "message",
-      "minChar": 1,
-      "url": "https://www.twitter.com/{}",
-      "urlMain": "https://www.twitter.com/"
-  },
-  "Vimeo": {
-      "errorMsg": "404 Not Found",
-      "errorType": "message",
-      "minChar": 1,
-      "url": "https://vimeo.com/{}",
-      "urlMain": "https://vimeo.com/"
-  },
-  "VK": {
-      "errorType": "status_code",
-      "minChar": 2,
-      "url": "https://vk.com/{}",
-      "urlMain": "https://vk.com/"
-  },
-  "VSCO": {
-      "errorType": "status_code",
-      "minChar": 3,
-      "url": "https://vsco.co/{}",
-      "urlMain": "https://vsco.co/"
-  },
-  "YouTube": {
-      "errorType": "message",
-      "minChar": 2,
-      "url": "https://www.youtube.com/{}",
-      "urlMain": "https://www.youtube.com/"
-  }
+    "500px": {
+        "errorMsg": "Sorry, no such page.",
+        "errorType": "message",
+        "minChar": 3,
+        "url": "https://500px.com/{}",
+        "urlMain": "https://500px.com/"
+    },
+    "9GAG": {
+        "errorType": "status_code",
+        "minChar": 3,
+        "url": "https://9gag.com/u/{}",
+        "urlMain": "https://9gag.com/"
+    },
+    "Aboutme": {
+        "errorType": "status_code",
+        "minChar": 3,
+        "url": "https://about.me/{}",
+        "urlMain": "https://about.me/"
+    },
+    "Academia-edu": {
+        "errorMsg": "Page Not Found",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://independent.academia.edu/{}",
+        "urlMain": "https://www.academia.edu/"
+    },
+    "Aptoide": {
+        "errorType": "status_code",
+        "minChar": 1,
+        "url": "https://{}.en.aptoide.com/",
+        "urlMain": "https://en.aptoide.com/"
+    },
+    "AskFM": {
+        "errorType": "status_code",
+        "minChar": 3,
+        "url": "https://ask.fm/{}",
+        "urlMain": "https://ask.fm/"
+    },
+    "BLIP-fm": {
+        "errorMsg": "Page Not Found",
+        "errorType": "message",
+        "minChar": 3,
+        "url": "https://blip.fm/{}",
+        "urlMain": "https://blip.fm/"
+    },
+    "Badoo": {
+        "errorType": "status_code",
+        "minChar": 1,
+        "url": "https://badoo.com/profile/{}",
+        "urlMain": "https://badoo.com/"
+    },
+    "Bandcamp": {
+        "errorMsg": "Sorry, that something isn\u2019t here",
+        "errorType": "message",
+        "minChar": 3,
+        "url": "https://www.bandcamp.com/{}",
+        "urlMain": "https://www.bandcamp.com/"
+    },
+    "Basecamp": {
+        "errorMsg": "The account you were looking for doesn't exist",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://{}.basecamphq.com",
+        "urlMain": "https://basecamp.com/"
+    },
+    "Behance": {
+        "errorMsg": "Oops! We can’t find that page.",
+        "errorType": "message",
+        "minChar": 3,
+        "url": "https://www.behance.net/{}",
+        "urlMain": "https://www.behance.net/"
+    },
+    "BitBucket": {
+        "errorType": "status_code",
+        "minChar": 1,
+        "url": "https://bitbucket.org/{}",
+        "urlMain": "https://bitbucket.org/"
+    },
+    "Blogger": {
+        "errorType": "status_code",
+        "minChar": 1,
+        "url": "https://{}.blogspot.com",
+        "urlMain": "https://www.blogger.com/"
+    },
+    "BuzzFeed": {
+        "errorMsg": "We can't find the page you're looking for.",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://buzzfeed.com/{}",
+        "urlMain": "https://buzzfeed.com/"
+    },
+    "Canva": {
+        "errorMsg": "Not found (404)",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://www.canva.com/{}",
+        "urlMain": "https://www.canva.com/"
+    },
+    "Carbonmade": {
+        "errorMsg": "You've accidentally stumbled upon Mike's super secret nap grotto.",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://{}.carbonmade.com",
+        "urlMain": "https://carbonmade.com/"
+    },
+    "CashMe": {
+        "errorType": "status_code",
+        "minChar": 3,
+        "url": "https://cash.me/{}",
+        "urlMain": "https://cash.me/"
+    },
+    "Cloob": {
+        "errorType": "status_code",
+        "minChar": 1,
+        "url": "https://www.cloob.com/name/{}",
+        "urlMain": "https://www.cloob.com/"
+    },
+    "Codecademy": {
+        "errorMsg": "404 error",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://www.codecademy.com/{}",
+        "urlMain": "https://www.codecademy.com/"
+    },
+    "Codementor": {
+        "errorMsg": "404",
+        "errorType": "message",
+        "minChar": 3,
+        "url": "https://www.codementor.io/{}",
+        "urlMain": "https://www.codementor.io/"
+    },
+    "Codepen": {
+        "errorType": "status_code",
+        "url": "https://codepen.io/{}",
+        "minChar": 1,
+        "urlMain": "https://codepen.io/"
+    },
+    "DailyMotion": {
+        "errorType": "status_code",
+        "minChar": 3,
+        "url": "https://www.dailymotion.com/{}",
+        "urlMain": "https://www.dailymotion.com/"
+    },
+    "DeviantART": {
+        "errorType": "status_code",
+        "minChar": 3,
+        "url": "https://{}.deviantart.com",
+        "urlMain": "https://deviantart.com"
+    },
+    "Disqus": {
+        "errorType": "status_code",
+        "minChar": 2,
+        "url": "https://disqus.com/{}",
+        "urlMain": "https://disqus.com/"
+    },
+    "Dribbble": {
+        "errorMsg": "Whoops, that page is gone.",
+        "errorType": "message",
+        "minChar": 2,
+        "url": "https://dribbble.com/{}",
+        "urlMain": "https://dribbble.com/"
+    },
+    "Etsy": {
+        "errorType": "status_code",
+        "minChar": 3,
+        "url": "https://www.etsy.com/shop/{}",
+        "urlMain": "https://www.etsy.com/"
+    },
+    "Facebook": {
+        "errorMsg": "The link you followed may be broken",
+        "errorType": "message",
+        "minChar": 5,
+        "url": "https://www.facebook.com/{}",
+        "urlMain": "https://www.facebook.com/"
+    },
+    "Flipboard": {
+        "errorMsg": "loading...",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://flipboard.com/@{}",
+        "urlMain": "https://flipboard.com/"
+    },
+    "Fotolog": {
+        "errorType": "status_code",
+        "minChar": 3,
+        "url": "https://fotolog.com/{}",
+        "urlMain": "https://fotolog.com/"
+    },
+    "GitHub": {
+        "errorType": "status_code",
+        "minChar": 1,
+        "url": "https://www.github.com/{}",
+        "urlMain": "https://www.github.com/"
+    },
+    "GoodReads": {
+        "errorType": "status_code",
+        "minChar": 4,
+        "url": "https://www.goodreads.com/{}",
+        "urlMain": "https://www.goodreads.com/"
+    },
+    "GooglePlus": {
+        "errorType": "status_code",
+        "minChar": 4,
+        "url": "https://plus.google.com/+{}",
+        "urlMain": "https://plus.google.com/"
+    },
+    "Gravatar": {
+        "errorType": "status_code",
+        "minChar": 2,
+        "url": "http://en.gravatar.com/{}",
+        "urlMain": "http://en.gravatar.com/"
+    },
+    "Imgur": {
+        "errorType": "status_code",
+        "minChar": 3,
+        "url": "https://imgur.com/user/{}",
+        "urlMain": "https://imgur.com/"
+    },
+    "Instagram": {
+        "errorMsg": "The link you followed may be broken",
+        "errorType": "message",
+        "minChar": 5,
+        "url": "https://www.instagram.com/{}",
+        "urlMain": "https://www.instagram.com/"
+    },
+    "Instructables": {
+        "errorMsg": "404: We're sorry, things break sometimes",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://www.instructables.com/member/{}",
+        "urlMain": "https://www.instructables.com/"
+    },
+    "Keybase": {
+        "errorType": "status_code",
+        "minChar": 2,
+        "url": "https://keybase.io/{}",
+        "urlMain": "https://keybase.io/"
+    },
+    "Kongregate": {
+        "errorMsg": "Sorry, no account with that name was found.",
+        "errorType": "message",
+        "minChar": 4,
+        "url": "https://www.kongregate.com/accounts/{}",
+        "urlMain": "https://www.kongregate.com/"
+    },
+    "lastfm": {
+        "errorMsg": "Whoops! Sorry, but this page doesn't exist.",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://last.fm/user/{}",
+        "urlMain": "https://last.fm/"
+    },
+    "LiveJournal": {
+        "errorMsg": "Unknown Journal",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://{}.livejournal.com",
+        "urlMain": "https://www.livejournal.com/"
+    },
+    "Medium": {
+        "errorType": "status_code",
+        "minChar": 1,
+        "url": "https://medium.com/@{}",
+        "urlMain": "https://medium.com/"
+    },
+    "Patreon": {
+        "errorType": "status_code",
+        "minChar": 1,
+        "url": "https://www.patreon.com/{}",
+        "urlMain": "https://www.patreon.com/"
+    },
+    "Reddit": {
+        "errorMsg": "page not found",
+        "errorType": "message",
+        "minChar": 3,
+        "url": "https://www.reddit.com/user/{}",
+        "urlMain": "https://www.reddit.com/"
+    },
+    "Roblox": {
+        "errorMsg": "Page cannot be found or no longer exists",
+        "errorType": "message",
+        "minChar": 3,
+        "url": "https://www.roblox.com/user.aspx?username={}",
+        "urlMain": "https://www.roblox.com/"
+    },
+    "Scribd": {
+        "errorMsg": "Page not found",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://www.scribd.com/{}",
+        "urlMain": "https://www.scribd.com/"
+    },
+    "SlideShare": {
+        "errorType": "status_code",
+        "minChar": 2,
+        "url": "https://slideshare.net/{}",
+        "urlMain": "https://slideshare.net/"
+    },
+    "SoundCloud": {
+        "errorType": "status_code",
+        "minChar": 2,
+        "url": "https://soundcloud.com/{}",
+        "urlMain": "https://soundcloud.com/"
+    },
+    "Spotify": {
+        "errorType": "status_code",
+        "minChar": 1,
+        "url": "https://open.spotify.com/user/{}",
+        "urlMain": "https://open.spotify.com/"
+    },
+    "Steam": {
+        "errorMsg": "The specified profile could not be found",
+        "errorType": "message",
+        "minChar": 2,
+        "url": "https://steamcommunity.com/id/{}",
+        "urlMain": "https://steamcommunity.com/"
+    },
+    "Twitter": {
+        "errorMsg": "page doesn't exist",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://www.twitter.com/{}",
+        "urlMain": "https://www.twitter.com/"
+    },
+    "Vimeo": {
+        "errorMsg": "404 Not Found",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://vimeo.com/{}",
+        "urlMain": "https://vimeo.com/"
+    },
+    "VK": {
+        "errorType": "status_code",
+        "minChar": 2,
+        "url": "https://vk.com/{}",
+        "urlMain": "https://vk.com/"
+    },
+    "VSCO": {
+        "errorType": "status_code",
+        "minChar": 3,
+        "url": "https://vsco.co/{}",
+        "urlMain": "https://vsco.co/"
+    },
+    "YouTube": {
+        "errorType": "message",
+        "minChar": 2,
+        "url": "https://www.youtube.com/{}",
+        "urlMain": "https://www.youtube.com/"
+    }
 }
