@@ -210,7 +210,6 @@ const appController = ((UICtrl, handleCtrl) => {
         readUsername();
         let isValid = usernameValidator();
         if(isValid) {
-            alert('You might face issue due to high traffic now. I am Working on it to fix it.');
             sitePassed = 0;
             errorKeyStore = [];
             UICtrl.updateCount(DOM.counter, 0);

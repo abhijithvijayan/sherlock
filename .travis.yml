@@ -8,12 +8,3 @@ git:
   depth: 3
 script:
   - npm run build 
-deploy:
-  provider: pages
-  skip-cleanup: true
-  keep-history: true
-  github-token: $GITHUB_TOKEN
-  local-dir: dist
-  target-branch: gh-pages
-  on:
-    branch: master

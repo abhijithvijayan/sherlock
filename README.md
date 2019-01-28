@@ -11,7 +11,7 @@
 </div>
 
 <br>
-<p align="center">https://abhijithvijayan.github.io/sherlock</p>
+<p align="center">https://sherlock-finder.netlify.com</p>
 <br>
 
 ![](https://i.imgur.com/zHFLS5F.gif)
