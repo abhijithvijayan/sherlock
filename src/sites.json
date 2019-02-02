@@ -136,11 +136,56 @@
         "minChar": 1,
         "urlMain": "https://codepen.io/"
     },
+    "Coderwall": {
+        "errorMsg": "404! Our feels when that url is used",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://coderwall.com/{}",
+        "urlMain": "https://coderwall.com/"
+    },
+    "ColourLovers": {
+        "errorMsg": "No one's home",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://www.colourlovers.com/lover/{}",
+        "urlMain": "https://www.colourlovers.com/"
+    },
+    "Contently": {
+        "errorMsg": "We can't find that page!",
+        "errorType": "message",
+        "minChar": 5,
+        "url": "https://{}.contently.com/",
+        "urlMain": "https://contently.com/"
+    },
+    "Coroflot": {
+        "errorType": "status_code",
+        "minChar": 3,
+        "url": "https://www.coroflot.com/{}",
+        "urlMain": "https://coroflot.com/"
+    },
+    "Crevado": {
+        "errorType": "status_code",
+        "minChar": 2,
+        "url": "https://{}.crevado.com",
+        "urlMain": "https://crevado.com/"
+    },
+    "Crunchyroll": {
+        "errorType": "status_code",
+        "minChar": 3,
+        "url": "https://www.crunchyroll.com/user/{}",
+        "urlMain": "https://www.crunchyroll.com/"
+    },
     "DailyMotion": {
         "errorType": "status_code",
         "minChar": 3,
         "url": "https://www.dailymotion.com/{}",
         "urlMain": "https://www.dailymotion.com/"
+    },
+    "Designspiration": {
+        "errorType": "status_code",
+        "minChar": 3,
+        "url": "https://www.designspiration.net/{}/",
+        "urlMain": "https://www.designspiration.net/"
     },
     "DeviantART": {
         "errorType": "status_code",
@@ -160,6 +205,20 @@
         "minChar": 2,
         "url": "https://dribbble.com/{}",
         "urlMain": "https://dribbble.com/"
+    },
+    "Ebay": {
+        "errorMsg": "The User ID you entered was not found",
+        "errorType": "message",
+        "minChar": 3,
+        "url": "https://www.ebay.com/usr/{}",
+        "urlMain": "https://www.ebay.com/"
+    },
+    "Ello": {
+        "errorMsg": "We couldn't find the page you're looking for",
+        "errorType": "message",
+        "minChar": 2,
+        "url": "https://ello.co/{}",
+        "urlMain": "https://ello.co/"
     },
     "Etsy": {
         "errorType": "status_code",
