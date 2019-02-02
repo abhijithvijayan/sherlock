@@ -1,5 +1,10 @@
 ## Contributing Guidelines
 
+## Development
+- `npm install` to install dependencies.
+- `npm run dev` to watch file changes in developement.
+- `npm run build` build the project files to `dist/` directory.
+
 Pull Requests are accepted.
 
 ### Adding New Sites
