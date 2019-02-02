@@ -19,7 +19,7 @@ export default class Sites {
         try {
             const response = await axios({
                 url: `${cors}${checkURL}`,
-                timeout: 20000
+                timeout: 30000
             });
             // console.log(response.data);
             // Status: 200 But not exist
