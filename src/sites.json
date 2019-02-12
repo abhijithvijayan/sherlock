@@ -233,6 +233,12 @@
         "url": "https://www.facebook.com/{}",
         "urlMain": "https://www.facebook.com/"
     },
+    "Flickr": {
+        "errorType": "status_code",
+        "minChar": 1,
+        "url": "https://www.flickr.com/people/{}",
+        "urlMain": "https://www.flickr.com/"
+    },
     "Flipboard": {
         "errorMsg": "loading...",
         "errorType": "message",
@@ -240,17 +246,36 @@
         "url": "https://flipboard.com/@{}",
         "urlMain": "https://flipboard.com/"
     },
-    "Fotolog": {
+    "Foursquare": {
         "errorType": "status_code",
-        "minChar": 3,
-        "url": "https://fotolog.com/{}",
-        "urlMain": "https://fotolog.com/"
+        "minChar": 1,
+        "url": "https://foursquare.com/{}",
+        "urlMain": "https://foursquare.com/"
+    },
+    "Giphy": {
+        "errorType": "status_code",
+        "minChar": 1,
+        "url": "https://giphy.com/{}",
+        "urlMain": "https://giphy.com/"
+    },
+    "Gitee": {
+        "errorType": "status_code",
+        "minChar": 2,
+        "url": "https://gitee.com/{}",
+        "urlMain": "https://gitee.com/"
     },
     "GitHub": {
         "errorType": "status_code",
         "minChar": 1,
         "url": "https://www.github.com/{}",
         "urlMain": "https://www.github.com/"
+    },
+    "GitLab": {
+        "errorMsg": "Sign in · GitLab",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://gitlab.com/{}",
+        "urlMain": "https://gitlab.com/"
     },
     "GoodReads": {
         "errorType": "status_code",
@@ -269,6 +294,40 @@
         "minChar": 2,
         "url": "http://en.gravatar.com/{}",
         "urlMain": "http://en.gravatar.com/"
+    },
+    "Gumroad": {
+        "errorMsg": "Page not found.",
+        "errorType": "message",
+        "minChar": 3,
+        "url": "https://www.gumroad.com/{}",
+        "urlMain": "https://www.gumroad.com/"
+    },
+    "HackerNews": {
+        "errorMsg": "No such user.",
+        "errorType": "message",
+        "minChar": 2,
+        "url": "https://news.ycombinator.com/user?id={}",
+        "urlMain": "https://news.ycombinator.com/"
+    },
+    "HackerOne": {
+        "errorMsg": "Page not found",
+        "errorType": "message",
+        "minChar": 2,
+        "url": "https://hackerone.com/{}",
+        "urlMain": "https://hackerone.com/"
+    },
+    "House-Mixes": {
+        "errorMsg": "Profile Not Found",
+        "errorType": "message",
+        "minChar": 1,
+        "url": "https://www.house-mixes.com/profile/{}",
+        "urlMain": "https://www.house-mixes.com/"
+    },
+    "HubPages": {
+        "errorType": "status_code",
+        "minChar": 3,
+        "url": "https://hubpages.com/@{}",
+        "urlMain": "https://hubpages.com/"
     },
     "Imgur": {
         "errorType": "status_code",

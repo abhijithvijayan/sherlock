@@ -21,16 +21,50 @@
 
     <section id="home">
         <!-- fork me badge -->
-        <a href="https://github.com/abhijithvijayan/sherlock/" class="github-corner" aria-label="View source on GitHub"><svg
-                width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
-                aria-hidden="true">
+        <a href="https://github.com/abhijithvijayan/sherlock/" class="github-corner"
+            aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250"
+                style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
                 <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-                <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                <path
+                    d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
                     fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-                <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                <path
+                    d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
                     fill="currentColor" class="octo-body"></path>
             </svg></a>
-        <style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+        <style>
+            .github-corner:hover .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+
+            @keyframes octocat-wave {
+
+                0%,
+                100% {
+                    transform: rotate(0)
+                }
+
+                20%,
+                60% {
+                    transform: rotate(-25deg)
+                }
+
+                40%,
+                80% {
+                    transform: rotate(10deg)
+                }
+            }
+
+            @media (max-width:500px) {
+                .github-corner:hover .octo-arm {
+                    animation: none
+                }
+
+                .github-corner .octo-arm {
+                    animation: octocat-wave 560ms ease-in-out
+                }
+            }
+        </style>
 
         <div class="container home__content">
             <div class="row head__holder">
@@ -59,7 +93,8 @@
                     <p class="pt-3">Found <span id="found__counter">0</span> so far</p>
                 </div>
                 <div class="col-md-6 d-none" id="end__results">
-                    <p><span id="total__sites--found">10</span> Results found from <span id="total__sites--all">20</span>
+                    <p><span id="total__sites--found">10</span> Results found from <span
+                            id="total__sites--all">20</span>
                         websites.</p>
                 </div>
             </div>
@@ -70,8 +105,8 @@
                 <!--500px-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="500px"><i class="fab fa-500px"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="500px"><i class="fab fa-500px"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">500px</h5>
                         </div>
@@ -81,8 +116,8 @@
                 <!--9GAG-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="9GAG">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="9GAG">
                             <p class="social__logo--text py-2-5 my-1">9GAG</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -94,8 +129,9 @@
                 <!--About.me-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Aboutme"><img class="card-img-top py-2-8 px-2" src="assets/aboutme_logo_white_1024.png"></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Aboutme"><img class="card-img-top py-2-8 px-2"
+                                src="assets/aboutme_logo_white_1024.png"></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">About.me</h5>
                         </div>
@@ -105,8 +141,8 @@
                 <!--Academia-edu-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Academia-edu">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Academia-edu">
                             <p class="social__logo--text py-2-5 my-1">Academia.edu</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -115,22 +151,11 @@
                     </div>
                 </div>
 
-                <!-- UNEXPECTED OUTPUT -->
-                <!-- <div class="col-md-1 col-2 social__site--content">
-                    <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center" id="AngelList"><i
-                                class="fab fa-angellist"></i></a>
-                        <div class="card-body social__title--holder">
-                            <h5 class="social__site--title">AngelList</h5>
-                        </div>
-                    </div>
-                </div> -->
-
                 <!--Aptoide-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Aptoide">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Aptoide">
                             <p class="social__logo--text py-2-5 my-1">Aptoide</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -142,8 +167,8 @@
                 <!--AskFM-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="AskFM">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="AskFM">
                             <p class="social__logo--text py-2-5 my-1">AskFM</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -155,8 +180,8 @@
                 <!--BLIP-fm-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="BLIP-fm">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="BLIP-fm">
                             <p class="social__logo--text py-2-5 my-1">BLIP.fm</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -168,8 +193,8 @@
                 <!--Badoo-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Badoo">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Badoo">
                             <p class="social__logo--text py-2-5 my-1">Badoo</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -181,8 +206,8 @@
                 <!--Bandcamp-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Bandcamp"><i class="fab fa-bandcamp"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Bandcamp"><i class="fab fa-bandcamp"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Bandcamp</h5>
                         </div>
@@ -192,8 +217,8 @@
                 <!--Basecamp-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Basecamp">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Basecamp">
                             <p class="social__logo--text py-2-5 my-1">Basecamp</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -205,8 +230,8 @@
                 <!--Behance-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Behance"><i class="fab fa-behance"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Behance"><i class="fab fa-behance"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Behance</h5>
                         </div>
@@ -216,32 +241,19 @@
                 <!--BitBucket-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="BitBucket"><i class="fab fa-bitbucket"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="BitBucket"><i class="fab fa-bitbucket"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">BitBucket</h5>
                         </div>
                     </div>
                 </div>
 
-                <!-- UNEXPECTED OUTPUT -->
-                <!-- <div class="col-md-1 col-2 social__site--content">
-                    <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="BlackPlanet">
-                            <p class="social__logo--text py-2-5 my-1">BlackPlanet</p>
-                        </a>
-                        <div class="card-body social__title--holder">
-                            <h5 class="social__site--title">BlackPlanet</h5>
-                        </div>
-                    </div>
-                </div> -->
-
                 <!--Blogger-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Blogger"><i class="fab fa-blogger"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Blogger"><i class="fab fa-blogger"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Blogger</h5>
                         </div>
@@ -251,8 +263,8 @@
                 <!--BuzzFeed-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="BuzzFeed">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="BuzzFeed">
                             <p class="social__logo--text py-2-5 my-1">BuzzFeed</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -264,8 +276,8 @@
                 <!--Canva-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Canva">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Canva">
                             <p class="social__logo--text py-2-5 my-1">Canva</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -277,8 +289,8 @@
                 <!--Carbonmade-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Carbonmade">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Carbonmade">
                             <p class="social__logo--text py-2-5 my-1">Carbonmade</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -290,8 +302,8 @@
                 <!--CashMe-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="CashMe">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="CashMe">
                             <p class="social__logo--text py-2-5 my-1">CashMe</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -303,8 +315,8 @@
                 <!--Cloob-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Cloob">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Cloob">
                             <p class="social__logo--text py-2-5 my-1">Cloob</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -316,8 +328,8 @@
                 <!--Codecademy-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Codecademy">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Codecademy">
                             <p class="social__logo--text py-2-5 my-1">Codecademy</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -329,8 +341,8 @@
                 <!--Codementor-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Codementor">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Codementor">
                             <p class="social__logo--text py-2-5 my-1">Codementor</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -342,8 +354,8 @@
                 <!--Codepen-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Codepen"><i class="fab fa-codepen"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Codepen"><i class="fab fa-codepen"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Codepen</h5>
                         </div>
@@ -353,8 +365,8 @@
                 <!--Coderwall-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Coderwall">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Coderwall">
                             <p class="social__logo--text py-2-5 my-1">Coderwall</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -366,8 +378,8 @@
                 <!--ColourLovers-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="ColourLovers">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="ColourLovers">
                             <p class="social__logo--text py-2-5 my-1">ColourLovers</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -379,8 +391,8 @@
                 <!--Contently-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Contently">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Contently">
                             <p class="social__logo--text py-2-5 my-1">Contently</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -392,8 +404,8 @@
                 <!--Coroflot-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Coroflot">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Coroflot">
                             <p class="social__logo--text py-2-5 my-1">Coroflot</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -405,8 +417,8 @@
                 <!--Crevado-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Crevado">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Crevado">
                             <p class="social__logo--text py-2-5 my-1">Crevado</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -418,8 +430,8 @@
                 <!--Crunchyroll-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Crunchyroll">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Crunchyroll">
                             <p class="social__logo--text py-2-5 my-1">Crunchyroll</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -431,8 +443,8 @@
                 <!--DailyMotion-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="DailyMotion">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="DailyMotion">
                             <p class="social__logo--text py-2-5 my-1">DailyMotion</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -444,21 +456,21 @@
                 <!--Designspiration-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Designspiration">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Designspiration">
                             <p class="social__logo--text py-2-5 my-1">Designspiration</p>
                         </a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Designspiration</h5>
                         </div>
                     </div>
-                </div>                
+                </div>
 
                 <!--DeviantART-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="DeviantART"><i class="fab fa-deviantart"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="DeviantART"><i class="fab fa-deviantart"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">DeviantART</h5>
                         </div>
@@ -468,8 +480,9 @@
                 <!--Disqus-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Disqus"><img class="card-img-top py-2-8 px-2" src="assets/disqus-logo-light.svg"></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Disqus"><img class="card-img-top py-2-8 px-2"
+                                src="assets/disqus-logo-light.svg"></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Disqus</h5>
                         </div>
@@ -479,8 +492,8 @@
                 <!--Dribbble-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Dribbble"><i class="fab fa-dribbble"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Dribbble"><i class="fab fa-dribbble"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Dribbble</h5>
                         </div>
@@ -490,32 +503,32 @@
                 <!--Ebay-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Ebay"><i class="fab fa-ebay"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Ebay"><i class="fab fa-ebay"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Ebay</h5>
                         </div>
                     </div>
-                </div>                
+                </div>
 
                 <!--Ello-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Ello">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Ello">
                             <p class="social__logo--text py-2-5 my-1">Ello</p>
                         </a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Ello</h5>
                         </div>
                     </div>
-                </div>                       
+                </div>
 
                 <!--Etsy-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Etsy"><i class="fab fa-etsy"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Etsy"><i class="fab fa-etsy"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Etsy</h5>
                         </div>
@@ -525,10 +538,21 @@
                 <!--Facebook-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Facebook</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Flickr-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Flickr"><i class="fab fa-flickr"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Flickr</h5>
                         </div>
                     </div>
                 </div>
@@ -536,23 +560,47 @@
                 <!--Flipboard-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Flipboard"><i class="fab fa-flipboard"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Flipboard"><i class="fab fa-flipboard"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Flipboard</h5>
                         </div>
                     </div>
                 </div>
 
-                <!--Fotolog-->
+                <!--Foursquare-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Fotolog">
-                            <p class="social__logo--text py-2-5 my-1">Fotolog</p>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Foursquare"><i class="fab fa-foursquare"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Foursquare</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Giphy-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Giphy">
+                            <p class="social__logo--text py-2-5 my-1">Giphy</p>
                         </a>
                         <div class="card-body social__title--holder">
-                            <h5 class="social__site--title">Fotolog</h5>
+                            <h5 class="social__site--title">Giphy</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Gitee-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Gitee">
+                            <p class="social__logo--text py-2-5 my-1">Gitee</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Gitee</h5>
                         </div>
                     </div>
                 </div>
@@ -560,10 +608,21 @@
                 <!--GitHub-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="GitHub"><i class="fab fa-github"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="GitHub"><i class="fab fa-github"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">GitHub</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--GitLab-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="GitLab"><i class="fab fa-gitlab"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">GitLab</h5>
                         </div>
                     </div>
                 </div>
@@ -571,8 +630,8 @@
                 <!--GoodReads-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="GoodReads"><i class="fab fa-goodreads"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="GoodReads"><i class="fab fa-goodreads"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">GoodReads</h5>
                         </div>
@@ -582,8 +641,9 @@
                 <!--GooglePlus-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="GooglePlus"><i class="fab fa-google-plus-g"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="GooglePlus"><i
+                                class="fab fa-google-plus-g"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Google +</h5>
                         </div>
@@ -593,8 +653,8 @@
                 <!--Gravatar-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Gravatar">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Gravatar">
                             <p class="social__logo--text py-2-5 my-1">Gravatar</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -603,11 +663,75 @@
                     </div>
                 </div>
 
+                <!--Gumroad-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Gumroad">
+                            <p class="social__logo--text py-2-5 my-1">Gumroad</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">Gumroad</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--HackerNews-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="HackerNews"><i
+                                class="fab fa-hacker-news"></i></a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">HackerNews</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--HackerOne-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="HackerOne">
+                            <p class="social__logo--text py-2-5 my-1">HackerOne</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">HackerOne</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--House-Mixes-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="House-Mixes">
+                            <p class="social__logo--text py-2-5 my-1">House-Mixes</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">House-Mixes</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!--HubPages-->
+                <div class="col-md-1 col-2 social__site--content">
+                    <div class="card social__site--card">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="HubPages">
+                            <p class="social__logo--text py-2-5 my-1">HubPages</p>
+                        </a>
+                        <div class="card-body social__title--holder">
+                            <h5 class="social__site--title">HubPages</h5>
+                        </div>
+                    </div>
+                </div>
+
                 <!--Imgur-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Imgur">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Imgur">
                             <p class="social__logo--text py-2-5 my-1">imgur</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -619,8 +743,8 @@
                 <!--Instagram-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Instagram"><i class="fab fa-instagram"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Instagram</h5>
                         </div>
@@ -630,8 +754,8 @@
                 <!--Instructables-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Instructables">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Instructables">
                             <p class="social__logo--text py-2-5 my-1">Instructables</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -643,8 +767,8 @@
                 <!--Keybase-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Keybase"><i class="fab fa-keybase"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Keybase"><i class="fab fa-keybase"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Keybase</h5>
                         </div>
@@ -654,8 +778,8 @@
                 <!--Kongregate-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Kongregate">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Kongregate">
                             <p class="social__logo--text py-2-5 my-1">Kongregate</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -667,8 +791,8 @@
                 <!--lastfm-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="lastfm"><i class="fab fa-lastfm"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="lastfm"><i class="fab fa-lastfm"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">lastfm</h5>
                         </div>
@@ -678,8 +802,8 @@
                 <!--LiveJournal-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="LiveJournal">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="LiveJournal">
                             <p class="social__logo--text py-2-5 my-1">LiveJournal</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -691,8 +815,8 @@
                 <!--Medium-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Medium"><i class="fab fa-medium"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Medium"><i class="fab fa-medium"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Medium</h5>
                         </div>
@@ -713,8 +837,8 @@
                 <!--Patreon-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Patreon"><i class="fab fa-patreon"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Patreon"><i class="fab fa-patreon"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Patreon</h5>
                         </div>
@@ -724,8 +848,8 @@
                 <!--Reddit-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Reddit"><i class="fab fa-reddit"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Reddit"><i class="fab fa-reddit"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Reddit</h5>
                         </div>
@@ -735,8 +859,8 @@
                 <!--Roblox-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Roblox">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Roblox">
                             <p class="social__logo--text py-2-5 my-1">Roblox</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -748,8 +872,8 @@
                 <!--Scribd-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Scribd"><i class="fab fa-scribd"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Scribd"><i class="fab fa-scribd"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Scribd</h5>
                         </div>
@@ -759,8 +883,8 @@
                 <!--SlideShare-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="SlideShare"><i class="fab fa-slideshare"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="SlideShare"><i class="fab fa-slideshare"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">SlideShare</h5>
                         </div>
@@ -770,8 +894,8 @@
                 <!--SoundCloud-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="SoundCloud"><i class="fab fa-soundcloud"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">SoundCloud</h5>
                         </div>
@@ -781,8 +905,8 @@
                 <!--Spotify-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Spotify"><i class="fab fa-spotify"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Spotify"><i class="fab fa-spotify"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Spotify</h5>
                         </div>
@@ -792,8 +916,8 @@
                 <!--Steam-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Steam"><i class="fab fa-steam"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Steam"><i class="fab fa-steam"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Steam</h5>
                         </div>
@@ -803,8 +927,8 @@
                 <!--Twitter -->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Twitter"><i class="fab fa-twitter"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Twitter</h5>
                         </div>
@@ -814,8 +938,8 @@
                 <!--Vimeo-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="Vimeo"><i class="fab fa-vimeo-v"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="Vimeo"><i class="fab fa-vimeo-v"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">Vimeo</h5>
                         </div>
@@ -825,8 +949,8 @@
                 <!--VK-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="VK"><i class="fab fa-vk"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="VK"><i class="fab fa-vk"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">VK</h5>
                         </div>
@@ -836,8 +960,8 @@
                 <!--VSCO-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="VSCO">
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="VSCO">
                             <p class="social__logo--text py-2-5 my-1">VSCO</p>
                         </a>
                         <div class="card-body social__title--holder">
@@ -849,8 +973,8 @@
                 <!--YouTube-->
                 <div class="col-md-1 col-2 social__site--content">
                     <div class="card social__site--card">
-                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener" class="social__site--link text-center"
-                            id="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a data-toggle="tooltip" data-placement="top" href="#" target="_blank" rel="noopener"
+                            class="social__site--link text-center" id="YouTube"><i class="fab fa-youtube"></i></a>
                         <div class="card-body social__title--holder">
                             <h5 class="social__site--title">YouTube</h5>
                         </div>
@@ -863,7 +987,8 @@
 
     <footer class="py-4">
         <div class="footer__text--holder text-center">
-            Made with ❤️ by <a class="github__repo--link" href="https://abhijithvijayan.github.io" target="_blank" rel="noopener">abhijithvijayan</a>
+            Made with ❤️ by <a class="github__repo--link" href="https://abhijithvijayan.github.io" target="_blank"
+                rel="noopener">abhijithvijayan</a>
         </div>
     </footer>
 

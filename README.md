@@ -19,7 +19,7 @@
 A JavaScript fork of https://github.com/TheYahya/sherlock/
 
 ### Note
-- Currently supports 63 websites.
+- Currently supports 72 websites.
 - More Sites are being added.
 
 ## Contributing and Support
